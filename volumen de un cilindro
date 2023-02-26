@@ -1,0 +1,19 @@
+# estructura-de-datos-c
+//calculas el volumen de un cilindro
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  float radio, altura, volumen;
+  const float PI = 3.1416;
+
+  cout << "Ingrese el valor del radio: ";
+  cin >> radio;
+  cout << "Ingrese el valor de la altura: ";
+  cin >> altura;
+  volumen = PI * radio * radio * altura;
+  cout << "El volumen del cilindro es: " << volumen << endl;
+
+  return 0;
+}
