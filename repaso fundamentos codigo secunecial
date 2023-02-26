@@ -1,0 +1,16 @@
+# estructura-de-datos-c
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n;
+
+  do {
+    cout << "Ingrese un número entero positivo: ";
+    cin >> n;
+  } while (n <= 0);
+
+  cout << "El número ingresado es: " << n << endl;
+
+  return 0;
+}
