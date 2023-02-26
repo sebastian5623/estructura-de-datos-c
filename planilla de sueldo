@@ -1,0 +1,43 @@
+# estructura-de-datos-c
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string nombre, apellido, cargo;
+    int carnet;
+    double salario_fijo, horas_extras, bono_antiguedad, deduccion_impuestos;
+    double salario_final;
+    
+    cout << "Ingrese el nombre del trabajador: ";
+    getline(cin, nombre);
+    cout << "Ingrese el apellido del trabajador: ";
+    getline(cin, apellido);
+    cout << "Ingrese el numero de carnet del trabajador: ";
+    cin >> carnet;
+    cout << "Ingrese el cargo del trabajador: ";
+    cin.ignore();
+    getline(cin, cargo);
+    cout << "Ingrese el salario fijo del trabajador: ";
+    cin >> salario_fijo;
+    cout << "Ingrese las horas extras del trabajador: ";
+    cin >> horas_extras;
+    cout << "Ingrese el bono de antiguedad del trabajador: ";
+    cin >> bono_antiguedad;
+    cout << "Ingrese la deduccion de impuestos del trabajador: ";
+    cin >> deduccion_impuestos;
+
+    salario_final = salario_fijo + horas_extras + bono_antiguedad - deduccion_impuestos;
+
+    cout << "\nInformación del trabajador:" << endl;
+    cout << "Nombre completo: " << nombre << " " << apellido << endl;
+    cout << "Numero de carnet: " << carnet << endl;
+    cout << "Cargo: " << cargo << endl;
+    cout << "Salario fijo: " << salario_fijo << endl;
+    cout << "Horas extras: " << horas_extras << endl;
+    cout << "Bono de antiguedad: " << bono_antiguedad << endl;
+    cout << "Deduccion de impuestos: " << deduccion_impuestos << endl;
+    cout << "Salario final del trabajador: " << salario_final << endl;
+
+    return 0;
+}
