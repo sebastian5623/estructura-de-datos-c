@@ -1,0 +1,80 @@
+# estructura-de-datos-c
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double medidaCilindro(double radio, double altura) {
+    return M_PI * pow(radio, 2) * altura;
+}
+
+int numeroMayor(int numero1, int numero2) {
+    if (numero1 > numero2) {
+        return numero1;
+    } else {
+        return numero2;
+    }
+}
+
+bool esPrimo(int numero) {
+    if (numero <= 1) {
+        return false;
+    }
+    for (int i = 2; i <= sqrt(numero); i++) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int opcion;
+    double radio, altura, medida;
+    int numero1, numero2, mayor;
+    int numero;
+
+    do {
+        cout << "Seleccione una opcion:" << endl;
+        cout << "1. Calcular la medida de un cilindro" << endl;
+        cout << "2. Determinar el numero mayor de dos numeros" << endl;
+        cout << "3. Determinar si un numero es primo" << endl;
+        cout << "4. Salir" << endl;
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                cout << "Ingrese el radio del cilindro: ";
+                cin >> radio;
+                cout << "Ingrese la altura del cilindro: ";
+                cin >> altura;
+                medida = medidaCilindro(radio, altura);
+                cout << "La medida del cilindro es " << medida << endl;
+                break;
+            case 2:
+                cout << "Ingrese el primer número: ";
+                cin >> numero1;
+                cout << "Ingrese el segundo número: ";
+                cin >> numero2;
+                mayor = numeroMayor(numero1, numero2);
+                cout << "El número mayor es " << mayor << endl;
+                break;
+            case 3:
+                cout << "Ingrese un número entero: ";
+                cin >> numero;
+                if (esPrimo(numero)) {
+                    cout << "El número es primo." << endl;
+                } else {
+                    cout << "El número no es primo." << endl;
+                }
+                break;
+            case 4:
+                cout << "Fin del programa." << endl;
+                break;
+            default:
+                cout << "Opción inválida. Intente nuevamente." << endl;
+                break;
+        }
+    } while (opcion != 4);
+
+    return 0;
+}
