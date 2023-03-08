@@ -46,3 +46,112 @@ int main() {
 
     return 0;
 }
+
+
+//codigo de practica de clases 
+#include <iostream>
+#include "conio.h"
+
+#define MAXCOL 20
+#define MAXROW 20
+
+using namespace std;
+
+void cargar(int matrix[MAXROW][MAXCOL], int n, int m);
+void mostrar(int matrix[MAXROW][MAXCOL], int n, int m);
+int mayor(int matrix[MAXROW][MAXCOL], int n, int m);
+void clasificar_fila(int matrix[MAXROW][MAXCOL], int n, int m);
+
+void main()
+{
+	int n, m, matrix[MAXROW][MAXCOL];
+	// Validando las filas
+	int opcion;
+	do
+	{
+		cout << "Ingrese el numero de filas: ";
+		cin >> n;
+	} while ((n > MAXROW) || (n <= 0));
+
+	//Validando columnas
+	do
+	{
+		cout << "Ingrese el numero de columnas: ";
+		cin >> m;
+	} while ((m > MAXCOL) || (m <= 0));
+	do {
+		cout << "*****************menu*****************" << endl;
+		cout << "----------------------------------------" << endl;
+		cout << "1. Cargar matriz: " << endl;
+		cout << "2. Mostrar matriz: " << endl;
+		cout << "3. Mostrar numero menor: " << endl;
+		cout << "4. Clasificar fila: " << endl;
+		cout << "5. Cargar una matriz cuadrada en forma circular: " << endl;
+		cout << " Ingrese la opcion: ";
+		cin >> opcion;
+		switch (opcion) {
+		
+		case 1:  mostrar( matrix[MAXROW][MAXCOL], n, m);
+			break;
+		case 2:  mayor( matrix[MAXROW][MAXCOL],  n, m);
+			break;
+		case 3:  clasificar_fila( matrix[MAXROW][MAXCOL], n,  m);
+			break;
+		//case 5:  mostrar(int matrix[MAXROW][MAXCOL], int n, int m);
+		//	break;
+			
+		case 0: cout << "Salir" << endl;
+			break;
+		default: "la opcion es invalida";
+			break;
+		} system("pause");
+		system("cls"); //para limpiar la pantalla
+	} while (opcion != 0);
+	
+
+	cargar(matrix, n, m);
+	mostrar(matrix, n, m);
+	cout << "El mayor valor de la matriz es: " << mayor(matrix, n, m);
+	clasificar_fila(matrix, n, m);
+	mostrar(matrix, n, m);
+	
+}
+
+void cargar(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int i, j;
+
+	for (i = 0; i < n; i++)
+		for (j = 0; j < m; j++)
+		{
+			cout << "MAT [" << i << "] [" << j << "]: ";
+			cin >> matrix[i][j];
+		}
+}
+
+void mostrar(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int i, j;
+
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < m; j++)
+			cout << "MAT [" << i << "] [" << j << "]: " << matrix[i][j] << "\t";
+		cout << endl;
+	}
+}
+
+int mayor(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int tmayor, i, j;
+
+	tmayor = matrix[0][0];
+	for (i = 0; i < n; i++)
+		for (j = 0; j < m; j++)
+		{
+			if (tmayor < matrix[i][j])
+				tmayor = matrix[i][j];
+
+		}
+	return tmayor;
+}
