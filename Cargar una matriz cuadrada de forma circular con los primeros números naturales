@@ -1,0 +1,48 @@
+# estructura-de-datos-c
+#include <iostream>
+using namespace std;
+
+const int N = 3; // tamaño de la matriz
+
+int main() {
+    int matriz[N][N];
+    int valor = 1; // primer número natural a cargar
+    int i, j, k;
+
+    for (k = 0; k < N / 2; k++) {
+        // cargar fila superior
+        for (j = k; j < N - k - 1; j++) {
+            matriz[k][j] = valor;
+            valor++;
+        }
+        // cargar columna derecha
+        for (i = k; i < N - k - 1; i++) {
+            matriz[i][N - k - 1] = valor;
+            valor++;
+        }
+        // cargar fila inferior
+        for (j = N - k - 1; j > k; j--) {
+            matriz[N - k - 1][j] = valor;
+            valor++;
+        }
+        // cargar columna izquierda
+        for (i = N - k - 1; i > k; i--) {
+            matriz[i][k] = valor;
+            valor++;
+        }
+    }
+    // cargar el centro de la matriz si el tamaño es impar
+    if (N % 2 == 1) {
+        matriz[N / 2][N / 2] = valor;
+    }
+
+    // mostrar la matriz cargada
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            cout << matriz[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
