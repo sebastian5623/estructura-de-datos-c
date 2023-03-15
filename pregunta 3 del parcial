@@ -1,0 +1,29 @@
+# estructura-de-datos-c
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void matriz_a_vector(vector<int>& vec, int matriz[][3], int filas, int columnas) {
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            if (matriz[i][j] <= vec.size()) {
+                vec.push_back(matriz[i][j]);
+            }
+        }
+    }
+    sort(vec.begin(), vec.end());
+}
+
+int main() {
+    int matriz[2][3] = {{5, 2, 7}, {3, 1, 4}};
+    vector<int> vec;
+    matriz_a_vector(vec, matriz, 2, 3);
+
+    for (int i = 0; i < vec.size(); i++) {
+        cout << vec[i] << " ";
+    }
+
+    return 0;
+}
