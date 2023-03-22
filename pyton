@@ -1,0 +1,6 @@
+# estructura-de-datos-p 
+horas = float(input("Introduce tus horas de trabajo: "))
+coste = float(input("Introduce lo que cobras por hora: "))
+nombre= input("ingresa tu nombre:")
+paga = horas * coste
+print("¡Hola " + nombre + "tu paga es",paga)
