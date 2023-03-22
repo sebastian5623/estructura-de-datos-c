@@ -1,0 +1,12 @@
+# estructura-de-datos-p
+deposito = float(input("Introduce la cantidad de dinero depositada en la cuenta de ahorros: "))
+
+ahorros_1 = round(deposito * 1.04, 2)
+
+ahorros_2 = round(ahorros_1 * 1.04, 2)
+
+ahorros_3 = round(ahorros_2 * 1.04, 2)
+
+print("Ahorros después de 1 año: ", ahorros_1)
+print("Ahorros después de 2 años: ", ahorros_2)
+print("Ahorros después de 3 años: ", ahorros_3)
