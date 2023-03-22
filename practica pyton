@@ -1,0 +1,11 @@
+# estructura-de-datos-p
+deposito = float(input("Introduce la cantidad de dinero depositada en la cuenta de ahorros: "))
+
+saldo = deposito * 1.04
+print("El saldo al final del primer año es:", round(saldo, 2))
+
+saldo = saldo * 1.04
+print("El saldo al final del segundo año es:", round(saldo, 2))
+
+saldo = saldo * 1.04
+print("El saldo al final del tercer año es:", round(saldo, 2))
